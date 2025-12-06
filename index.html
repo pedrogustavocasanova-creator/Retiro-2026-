@@ -21,8 +21,8 @@ body {
     padding-bottom: 30px;
 }
 
-/* Fundo do cabeçalho com Gradiente Verde Escuro e texto em Branco */
-header {
+/* Novo estilo para o título principal da aplicação (Tela 1 apenas) */
+.main-app-title {
     /* Fonte INTER com peso 900 (Black) para o título principal: máximo impacto */
     font-family: 'Inter', sans-serif; 
     background: linear-gradient(90deg, #004D40 0%, #1B5E20 100%); 
@@ -32,12 +32,10 @@ header {
     text-align: center;
     color: #FFFFFF;
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    margin-bottom: 25px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    margin: -20px -20px 25px -20px; /* Expande para preencher o topo da Tela 1 */
     letter-spacing: 0px; /* Resetando espaçamento para Inter */
 }
+/* Estilos para Transição de Tela */
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 .screen { display: none; padding: 0 20px; animation: fadeIn 0.4s ease; }
 .active { display: block; }
@@ -197,10 +195,11 @@ header {
 </head>
 <body>
 
-<header>RETIRO 2026 🏆 ESTRATEGISTA PESSOAL</header>
-
 <!-- TELA 1 (PRINCIPAL) -->
 <div id="tela1" class="screen active">
+    <!-- NOVO TÍTULO: Agora inserido DENTRO da tela 1 para que seja ocultado nas outras telas -->
+    <div class="main-app-title">RETIRO 2026 🏆 ESTRATEGISTA PESSOAL</div>
+
     <div class="list-container">
         <!-- A caixa de status é onde a mensagem de "adicionado com sucesso" vai aparecer -->
         <div id="statusMessage" class="status-message"></div>
