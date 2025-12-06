@@ -1,129 +1,990 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riscos de Eletrodomésticos com Fios Descascados</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #141414;
-            color: #fff;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #111;
-            padding: 20px;
-        }
-        .navbar h1 {
-            font-size: 24px;
-            color: #e50914;
-        }
-        .content {
-            padding: 20px;
-        }
-        .content h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        .content p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .card {
-            background-color: #222;
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-        .card h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #e50914;
-        }
-        .card p {
-            font-size: 16px;
-            color: #bbb;
-        }
-        .link-container {
-            margin: 30px 0;
-            text-align: center;
-        }
-        .link-container a {
-            text-decoration: none;
-            font-size: 20px;
-            color: #e50914;
-            border: 2px solid #e50914;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .link-container a:hover {
-            background-color: #e50914;
-            color: #fff;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #111;
-            color: #666;
-            font-size: 14px;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Retiro 2026 - Estrategista Pessoal</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+/* -------------------- CONFIG BASE - DARK THEME - FONTES ORIGINAIS (INTER BOLD) -------------------- */
+/* Fonte única INTER para corpo e títulos, usando peso 900 (Black/Mais grosso) para máximo impacto nos títulos */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+body {
+    margin: 0;
+    /* Corpo do texto usa Inter */
+    font-family: 'Inter', sans-serif; 
+    background: #0D1117;
+    color: #E0E0E0;
+    overflow-x: hidden;
+    min-height: 100vh;
+    padding-bottom: 30px;
+}
+
+/* Fundo do cabeçalho com Gradiente Verde Escuro e texto em Branco */
+header {
+    /* Fonte INTER com peso 900 (Black) para o título principal: máximo impacto */
+    font-family: 'Inter', sans-serif; 
+    background: linear-gradient(90deg, #004D40 0%, #1B5E20 100%); 
+    padding: 20px;
+    font-size: 32px; 
+    font-weight: 900; /* PESO 900 RESTAURADO */
+    text-align: center;
+    color: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    margin-bottom: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    letter-spacing: 0px; /* Resetando espaçamento para Inter */
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.screen { display: none; padding: 0 20px; animation: fadeIn 0.4s ease; }
+.active { display: block; }
+
+/* Fundo das Pranchetas (List-Containers) Cinza Escuro/Preto - MANTIDO */
+.list-container { 
+    max-width: 650px; 
+    margin: 0 auto; 
+    background: #161B22; 
+    color: #E0E0E0; 
+    border-radius:12px; 
+    padding:25px; 
+    box-shadow: 0 8px 30px rgba(0,0,0,0.8); 
+    border:1px solid #30363D; 
+    margin-bottom:35px; 
+}
+.main-section-title { 
+    /* Fonte INTER com peso 900 (Black) para os títulos de seção: máximo impacto */
+    font-family: 'Inter', sans-serif;
+    margin-top:0; margin-bottom:15px; padding-bottom:8px; color:#4CAF50; font-size:24px; border-bottom:2px solid #21262D; display:flex; align-items:center; justify-content:space-between; 
+    font-weight: 900; /* PESO 900 RESTAURADO */
+    letter-spacing: 0px;
+}
+
+/* Buttons and layout */
+.button-base { padding: 10px 18px; border: none; border-radius: 10px; cursor: pointer; font-weight:700; transition: all 0.2s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.4); }
+.button-base:hover:not(:disabled){ transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.5); }
+.button-base:active:not(:disabled){ transform: scale(0.98); box-shadow: 0 2px 4px rgba(0,0,0,0.4); }
+.button-base:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Botão de Copia de Todos (Reduzido para ícone) */
+.copy-btn { 
+    background: #4CAF50; 
+    color: white; 
+    padding: 8px 12px; 
+    border: none; 
+    border-radius: 8px; 
+    font-weight: 900; 
+    cursor:pointer; 
+    font-size: 20px;
+    line-height: 1;
+}
+.copy-btn:hover { background:#81C784; }
+.copy-btn:active { transform: scale(0.95); }
+
+/* Botão de Copia Individual (Pequeno, ao lado do nome) */
+.small-copy-btn { 
+    background: #4A4A4A; 
+    color: white; 
+    width: 35px; 
+    height: 35px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 0; 
+    border: none; 
+    border-radius: 50%; 
+    font-size: 16px; 
+    line-height: 1; 
+    margin-left: 10px; 
+    transition: background-color 0.2s; 
+    flex-shrink: 0; 
+}
+.small-copy-btn:hover { background: #6A737D; transform: scale(1.05); }
+.small-copy-btn:active { transform: scale(0.95); }
+
+
+.add-section { display:flex; gap:8px; margin-bottom:20px; align-items:center; padding:8px; border-radius:10px; background:#1E252D; box-shadow: inset 0 1px 3px rgba(0,0,0,0.3); }
+.add-section input { flex-grow:1; padding:10px; border-radius:8px; border:1px solid #30363D; background:#0D1117; color:white; font-size:15px; transition: border-color 0.2s; height:auto; }
+.add-section input:focus { border-color:#4CAF50; outline:none; box-shadow:0 0 0 2px rgba(76,175,80,0.3); }
+
+/* CLASSE PARA BOTÕES COMPACTOS DE ADIÇÃO */
+.compact-add-button { 
+    width:40px !important; 
+    height:40px !important; 
+    padding:0 !important; 
+    border-radius:50% !important; 
+    font-size:24px !important; 
+    display:flex; 
+    align-items:center; 
+    justify-content:center; 
+    font-weight:600 !important; 
+    flex-shrink:0; 
+}
+.add-section .member-button { background:#03A9F4; color:white; }
+.add-section .challenge-button { background:#FF9800; color:white; }
+
+/* Ajuste do item-list para posicionar o botão de cópia */
+.item-list { display:flex; align-items:center; justify-content:space-between; padding:0; margin-bottom:8px; border-radius:8px; background:#1E252D; }
+
+/* O item-info agora ocupa o espaço, mas não inclui o botão de cópia */
+.item-info { display:flex; align-items:center; flex-grow:1; cursor:pointer; padding:15px; border-radius:8px 0 0 8px; transition: background-color 0.2s; font-size:18px; font-weight:600; }
+.item-info:hover { background:#252D36; box-shadow:0 2px 5px rgba(0,0,0,0.4); }
+
+.item-actions { display:flex; align-items:center; padding-right:15px; } /* Novo container para os botões de ação */
+
+.circle { width:40px; height:40px; background:#03A9F4; border-radius:50%; margin-right:15px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:18px; color:white; box-shadow:0 2px 5px rgba(0,0,0,0.3); }
+.challenge-circle { background:#FF9800; }
+.delete-button { background:#F44336; color:white; width:35px; height:35px; display:flex; align-items:center; justify-content:center; padding:0; border:none; border-radius:50%; font-size:18px; line-height:1; transition: background-color 0.2s, transform 0.1s; flex-shrink:0; }
+.delete-button:hover { background:#D32F2F; transform:scale(1.05); }
+.delete-button:active { transform:scale(0.95); }
+.back { color:#4CAF50; cursor:pointer; font-size:18px; margin-bottom:25px; display:inline-block; transition:0.3s; font-weight:600; }
+.back:hover { transform: translateX(-8px); color:#81C784; }
+.profile-header { max-width:650px; margin:auto; display:flex; align-items:center; margin-bottom:30px; padding-bottom:10px; border-bottom:1px solid #30363D; }
+.profile-header .circle { width:55px; height:55px; font-size:26px; }
+#currentChallengeName { margin-left:15px; font-size:28px; font-weight:700; color:#fff; }
+.member-detail-title { max-width:650px; margin:0 auto 30px auto; font-size:32px; font-weight:900; color:#fff; padding-bottom:10px; border-bottom:2px solid #30363D; } /* PESO 900 RESTAURADO AQUI */
+.challenge-details-content { max-width:650px; margin:auto; }
+.challenge-stats { background:#21262D; padding:15px; border-radius:10px; margin-bottom:20px; text-align:center; font-size:16px; color:#FFC107; font-weight:600; border:1px dashed #FF9800; }
+.add-participant-section { background:#1E252D; padding:20px; border-radius:12px; margin-bottom:25px; border:1px solid #30363D; }
+.add-participant-section h3 { color:#FFC107; margin-top:0; font-size:20px; border-bottom:1px dashed #30363D; padding-bottom:10px; margin-bottom:15px; }
+.add-participant-controls { display:flex; gap:10px; }
+#memberSelect { flex-grow:1; padding:10px; border-radius:8px; border:1px solid #30363D; background:#0D1117; color:white; font-size:16px; }
+/* O botão addParticipantButton NÃO TEM MAIS O TEXTO "Adicionar", agora usa o estilo compacto */
+#addParticipantButton { background:#FF9800; color:white; width:40px; height:40px; padding:0; border-radius:50%; font-size:24px; display:flex; align-items:center; justify-content:center; }
+.participant-item { background:#161B22; padding:20px; border-radius:12px; margin-bottom:15px; box-shadow:0 4px 10px rgba(0,0,0,0.6); border:1px solid #30363D; }
+.participant-header { display:flex; align-items:center; justify-content:space-between; padding-bottom:15px; border-bottom:1px solid #30363D; margin-bottom:15px; }
+.participant-header .item-info { padding:0; cursor:default; transition:none; background:none; }
+.participant-header .item-info:hover { background:none; }
+.participant-header .circle { background:#4CAF50; }
+.participant-name { font-size:18px; font-weight:700; color:#fff; }
+.participant-details-group { display:flex; flex-direction:column; gap:15px; margin-top:10px; }
+.participant-details-group label { display:block; font-size:14px; color:#81C784; margin-bottom:5px; font-weight:600; }
+.participant-details-group textarea { width:100%; padding:10px; border-radius:8px; border:1px solid #30363D; background:#0D1117; color:white; font-size:15px; resize:vertical; min-height:50px; box-sizing:border-box; }
+.participant-details-group button { background:#4CAF50; color:white; padding:10px; margin-top:5px; }
+.skill-block, .summary-block { max-width:650px; margin:auto; background:#161B22; border-radius:12px; padding:25px; margin-bottom:35px; box-shadow:0 4px 10px rgba(0,0,0,0.6); border:1px solid #30363D; }
+.skill-block h3, .summary-block h3 { color:#4CAF50; font-size:22px; margin:0 0 15px 0; padding:0; border-bottom:1px solid #30363D; padding-bottom:10px; }
+.skill-line { background:#1E252D; padding:15px; border-radius:10px; margin-bottom:10px; border:1px solid #FF9800; }
+.skill-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+.skill-label { font-weight:bold; font-size:16px; color:#FFC107; }
+.progress-container { height:10px; background:#30363D; border-radius:5px; overflow:hidden; }
+.progress-bar { height:100%; background:linear-gradient(90deg,#FF9800,#FFC107); border-radius:5px; transition: width 0.3s ease-out; }
+.skill-controls { display:flex; align-items:center; }
+.skill-controls button { background:#FF9800; color:#161B22; font-weight:900; width:30px; height:30px; line-height:1; font-size:18px; border:none; border-radius:50%; margin-left:8px; box-shadow:none; transition: background-color 0.1s; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+.skill-controls button:hover { background:#E68900; transform:none; }
+.skill-controls button:active { transform:scale(0.95); }
+.skill-controls button:disabled { background:#30363D; color:#6A737D; }
+.summary-header { display:flex; justify-content:space-between; align-items:center; }
+#summaryDisplay { padding:15px; background:#1E252D; border-radius:8px; white-space:pre-wrap; border:1px solid #30363D; }
+#summaryTextarea { width:100%; padding:12px; border-radius:8px; border:1px solid #30363D; background:#0D1117; color:white; font-size:15px; resize:vertical; box-sizing:border-box; }
+#saveSummaryButton { background:#4CAF50; color:white; padding:12px; width:100%; margin-top:15px; }
+.placeholder-text { font-style:italic; color:#6A737D; }
+.status-message { color:white; background:#D32F2F; padding:10px; margin-bottom:15px; border-radius:8px; text-align:center; display:none; font-weight:600; opacity:0; transition: opacity 0.5s ease; }
+.status-success { background:#4CAF50; }
+#statusInfo { font-size:12px; color:#6A737D; text-align:center; padding:15px 0; word-break:break-all; }
+.modal-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); display:flex; justify-content:center; align-items:center; z-index:1000; display:none; }
+.modal-content { background:#161B22; padding:30px; border-radius:12px; max-width:90%; width:400px; text-align:center; box-shadow:0 5px 15px rgba(0,0,0,0.9); border:1px solid #30363D; }
+.modal-content h3 { color:#F44336; margin-top:0; border-bottom:1px solid #30363D; padding-bottom:10px; margin-bottom:20px; }
+.modal-content p { color:#E0E0E0; margin-bottom:25px; font-size:16px; }
+.modal-actions { display:flex; justify-content:space-around; gap:15px; }
+.modal-btn { padding:10px 20px; border-radius:8px; font-weight:700; cursor:pointer; transition:background-color 0.2s; flex-grow:1; }
+.modal-cancel { background:#30363D; color:#E0E0E0; }
+.modal-cancel:hover { background:#4A4A4A; }
+.modal-delete { background:#F44336; color:white; }
+.modal-delete:hover { background:#D32F2F; }
+</style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <div class="navbar">
-        <h1>EletroSegurança</h1>
+<header>RETIRO 2026 🏆 ESTRATEGISTA PESSOAL</header>
+
+<!-- TELA 1 (PRINCIPAL) -->
+<div id="tela1" class="screen active">
+    <div class="list-container">
+        <!-- A caixa de status é onde a mensagem de "adicionado com sucesso" vai aparecer -->
+        <div id="statusMessage" class="status-message"></div>
+        <h2 class="main-section-title" style="color:#03A9F4;">
+            <span>INTEGRANTES:</span>
+            <div>
+                <!-- Botão de Copiar Todos (Agora apenas o ícone) -->
+                <button id="copyAllBtn" class="copy-btn" title="Copiar relatório completo de todos os integrantes">📋</button>
+            </div>
+        </h2>
+        <!-- CAMPO PARA ADICIONAR MEMBRO -->
+        <div class="add-section">
+            <input type="text" id="newMemberName" placeholder="Nome do novo membro..." maxlength="30" />
+            <!-- Botão Adicionar Membro - SEM ONCLICK INLINE -->
+            <button id="addMemberButton" class="button-base member-button compact-add-button">+</button>
+        </div>
+        <div id="memberList"></div>
     </div>
 
-    <!-- Main Content -->
-    <div class="content">
-        <h2>Riscos de Eletrodomésticos com Fios Descascados</h2>
-        <p>Os eletrodomésticos com fios descascados representam um grande risco à segurança. Eles podem causar choques elétricos, incêndios e até mesmo a perda de vidas. Entenda os principais perigos e saiba como se proteger.</p>
+    <div class="list-container">
+        <h2 class="main-section-title" style="color:#FF9800;">PROVAS & DESAFIOS:</h2>
+        <!-- CAMPO PARA ADICIONAR PROVA -->
+        <div class="add-section">
+            <input type="text" id="newChallengeName" placeholder="Nome da nova Prova (ex: Corrida, Balde)..." maxlength="50" />
+            <!-- Botão Adicionar Prova - SEM ONCLICK INLINE -->
+            <button id="addChallengeButton" class="button-base challenge-button compact-add-button">+</button>
+        </div>
+        <div id="challengeList"></div>
+    </div>
+
+    <div id="statusInfo">Status: Inicializando...</div>
+</div>
+
+<!-- TELA 2 (DETALHES DA PROVA) -->
+<div id="tela2" class="screen">
+    <div class="challenge-details-content">
+        <span class="back" onclick="backToMain()">← Voltar para Provas</span>
+        <div class="profile-header">
+            <div id="challengeCircle" class="circle challenge-circle"></div>
+            <span id="currentChallengeName"></span>
+        </div>
+        <div class="challenge-stats">
+            <span id="participantCount">0 Participantes</span>
+        </div>
+
+        <div class="add-participant-section">
+            <h3>Adicionar Membro à Prova</h3>
+            <div class="add-participant-controls">
+                <select id="memberSelect" name="memberSelect"><option value="" disabled selected>Selecione um integrante...</option></select>
+                <!-- Botão Adicionar Participante - SEM ONCLICK INLINE -->
+                <button id="addParticipantButton" class="button-base">+</button>
+            </div>
+        </div>
+
+        <div id="participantList">
+            <p style="text-align:center; color:#6A737D; padding:20px;">Adicione o primeiro participante acima.</p>
+        </div>
+    </div>
+</div>
+
+<!-- TELA 3 (DETALHES DO MEMBRO) -->
+<div id="tela3" class="screen">
+    <span class="back" onclick="backToMain()">← Voltar para a lista</span>
+    <h1 id="currentMemberName" class="member-detail-title"></h1>
+
+    <div id="skillsContainer" class="skill-block"><h3>Habilidades Táticas</h3></div>
+
+    <div class="summary-block">
+        <div class="summary-header">
+            <h3>Resumo de Análise</h3>
+            <!-- Botão Toggle Resumo também é um '+' compacto -->
+            <button id="summaryToggleButton" class="button-base compact-add-button" style="width:35px;height:35px;font-size:20px;margin-left:10px" onclick="toggleSummaryInput()">+</button>
+        </div>
+        <div id="summaryDisplay" class="placeholder-text"></div>
+        <div id="summaryEditArea" class="edit-area" style="display:none;">
+            <textarea id="summaryTextarea" rows="4" placeholder="Escreva aqui o resumo de habilidades e pontos fortes do membro..."></textarea>
+            <button id="saveSummaryButton" class="button-base save-button" onclick="saveSummary()">Salvar</button>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL DE CONFIRMAÇÃO DE EXCLUSÃO -->
+<div id="deleteModal" class="modal-overlay">
+    <div class="modal-content">
+        <h3>Confirmação de Exclusão</h3>
+        <p id="deleteModalText">Tem certeza?</p>
+        <div class="modal-actions">
+            <button class="modal-btn modal-cancel" onclick="hideDeleteModal()">Cancelar</button>
+            <button class="modal-btn modal-delete" onclick="confirmDelete()">EXCLUIR</button>
+        </div>
+    </div>
+</div>
+
+<!-- SCRIPT (no final para garantir elementos no DOM) -->
+<script>
+/* /******************************************************************
+ * GESTÃO DE DADOS: LOCALSTORAGE
+ * * Este aplicativo é 100% OFFLINE e utiliza a memória local (localStorage) 
+ * do dispositivo/navegador para salvar todos os dados.
+ ******************************************************************/
+
+// CHAVES para o Local Storage (Memória Local)
+const MEMBER_STORAGE_KEY = 'retiro2026_members';
+const CHALLENGE_STORAGE_KEY = 'retiro2026_challenges';
+
+// Objetos para armazenar os dados carregados
+let membersData = {};
+let challengesData = {};
+let currentMemberId = null;
+let currentChallengeId = null;
+let currentScreen = 'main';
+
+// Configuração de Habilidades
+const allSkills = [
+    "Força","Agilidade","Reflexo","Velocidade","Tempo de reação",
+    "QI bíblico","Raciocínio","Controle psicológico","Competitividade","Agressividade"
+];
+const initialSkillLevel = 5;
+const maxSkillLevel = 9;
+const minSkillLevel = 1;
+
+// Referências aos elementos DOM (Definidos após DOMContentLoaded)
+let statusMessageEl, memberListEl, challengeListEl, statusInfoEl, memberSelectEl, copyAllBtn;
+let addMemberButton, addChallengeButton, addParticipantButton;
+
+/* -------------------- UTILIDADES -------------------- */
+/** Gerador de ID único (Essencial para persistir objetos e não apenas nomes) */
+function generateId() {
+    if (typeof crypto !== 'undefined' && crypto.randomUUID) return crypto.randomUUID();
+    return 'id-' + Math.random().toString(36).slice(2,10);
+}
+
+/** Mostra uma mensagem de status temporária na tela. */
+function showStatus(message, isError = false) {
+    if (!statusMessageEl) return;
+    statusMessageEl.textContent = message;
+    statusMessageEl.classList.remove('status-success');
+    if (!isError) statusMessageEl.classList.add('status-success');
+    
+    statusMessageEl.style.opacity = '1';
+    statusMessageEl.style.display = 'block';
+    
+    setTimeout(() => {
+        statusMessageEl.style.opacity = '0';
+        setTimeout(() => { statusMessageEl.style.display = 'none'; }, 500);
+    }, 3000);
+}
+window.showStatus = showStatus;
+
+/** 💾 Salva o estado atual (Membros e Provas) no localStorage. */
+function saveDataToStorage() {
+    try {
+        localStorage.setItem(MEMBER_STORAGE_KEY, JSON.stringify(membersData));
+        localStorage.setItem(CHALLENGE_STORAGE_KEY, JSON.stringify(challengesData));
+        console.log("SALVAMENTO LOCAL: Dados de Membros e Provas atualizados no localStorage.");
+        renderAllLists();
+    } catch (error) {
+        console.error("ERRO ao salvar no localStorage:", error);
+        showStatus("ERRO: Falha ao salvar dados localmente. Verifique o espaço de armazenamento.", true);
+    }
+}
+
+/** 📂 Carrega os dados do localStorage ao iniciar. */
+function loadDataFromStorage() {
+    try {
+        const storedMembers = localStorage.getItem(MEMBER_STORAGE_KEY);
+        const storedChallenges = localStorage.getItem(CHALLENGE_STORAGE_KEY);
         
-        <div class="card-container">
-            <!-- Card 1: Choques Elétricos -->
-            <div class="card">
-                <h3>Choques Elétricos</h3>
-                <p>Fios descascados podem expor o condutor elétrico, resultando em choques perigosos para quem entra em contato com o fio. Certifique-se de que os cabos de seus eletrodomésticos estão intactos.</p>
+        membersData = storedMembers ? JSON.parse(storedMembers) : {};
+        challengesData = storedChallenges ? JSON.parse(storedChallenges) : {};
+
+        if (statusInfoEl) {
+             statusInfoEl.textContent = `Status: ${Object.keys(membersData).length} membros e ${Object.keys(challengesData).length} provas carregadas.`;
+        }
+    } catch (error) {
+        console.error("ERRO ao carregar do localStorage:", error);
+        showStatus("ERRO: Falha ao carregar dados locais. Os dados podem estar corrompidos.", true);
+    }
+}
+
+/** Dispara a renderização de todas as listas na tela principal e atualiza as telas de detalhe. */
+function renderAllLists() {
+    renderMemberList();
+    renderChallengeList();
+    populateMemberSelect();
+    
+    // Atualiza as telas de detalhe se estiverem abertas
+    if (currentScreen === 'member' && currentMemberId) {
+        renderMemberDetails(); 
+    } else if (currentScreen === 'challenge' && currentChallengeId) {
+        const challenge = challengesData[currentChallengeId];
+        if (challenge && challenge.participants) {
+             const participantsArray = Object.values(challenge.participants);
+             renderParticipants(participantsArray);
+        }
+    }
+}
+
+/* -------------------- FUNÇÕES DE INICIALIZAÇÃO -------------------- */
+/** Obtém todas as referências DOM após o carregamento */
+function setupDomReferences() {
+    statusMessageEl = document.getElementById('statusMessage');
+    memberListEl = document.getElementById('memberList');
+    challengeListEl = document.getElementById('challengeList');
+    statusInfoEl = document.getElementById('statusInfo');
+    memberSelectEl = document.getElementById('memberSelect');
+    copyAllBtn = document.getElementById('copyAllBtn');
+
+    addMemberButton = document.getElementById('addMemberButton');
+    addChallengeButton = document.getElementById('addChallengeButton');
+    addParticipantButton = document.getElementById('addParticipantButton');
+}
+
+/** Inicializa o aplicativo. */
+window.initApp = function() {
+    setupDomReferences();
+
+    if (statusInfoEl) statusInfoEl.textContent = "Status: Inicializando o aplicativo...";
+    
+    loadDataFromStorage();
+    renderAllLists();
+
+    if (statusInfoEl) statusInfoEl.textContent = "Status: Pronto. Aplicativo 100% Offline (Dados no LocalStorage).";
+    console.log("APLICAÇÃO PRONTA: Dados carregados e tela principal ativada.");
+};
+
+/* -------------------- CRUD MEMBROS GERAIS (TELA 1) -------------------- */
+
+/** Função adicionar (Membro) - Utiliza localStorage */
+window.addMember = function() {
+    const input = document.getElementById('newMemberName'); // ID do campo de input do HTML
+    if (!input) { showStatus("Erro interno: Campo de nome não encontrado.", true); return; }
+    
+    const rawName = input.value.trim();
+    if (rawName.length < 3) { showStatus("Nome deve ter pelo menos 3 letras.", true); return; }
+    
+    const memberId = generateId();
+    const memberName = rawName.charAt(0).toUpperCase() + rawName.slice(1).toLowerCase();
+    
+    const initialData = { id: memberId, name: memberName, summary: "" };
+    allSkills.forEach(skill => { initialData[skill] = initialSkillLevel; });
+    
+    if (typeof membersData !== 'object' || membersData === null) {
+        membersData = {};
+    }
+    membersData[memberId] = initialData;
+    saveDataToStorage(); // <-- Salva na memória local e renderiza listas
+    
+    input.value = '';
+    showStatus(`Membro '${memberName}' adicionado e salvo!`, false);
+};
+
+/** Deleta o membro e remove ele de todas as provas. */
+async function deleteMember(memberId) {
+    const challengeIds = Object.keys(challengesData);
+    let removedFromChallenges = 0;
+    challengeIds.forEach(challengeId => {
+        const participants = challengesData[challengeId].participants || {};
+        const participantIds = Object.keys(participants);
+        participantIds.forEach(participantId => {
+            if (participants[participantId].memberRefId === memberId) {
+                delete challengesData[challengeId].participants[participantId];
+                removedFromChallenges++;
+            }
+        });
+    });
+    delete membersData[memberId];
+    saveDataToStorage();
+    window.showStatus(`Membro e dados excluídos com sucesso. Removido de ${removedFromChallenges} provas.`, false);
+}
+
+/* -------------------- CRUD PROVAS/DESAFIOS (TELA 1) -------------------- */
+
+/** Função adicionar (Prova/Desafio) - Utiliza localStorage */
+window.addChallenge = function() {
+    const input = document.getElementById('newChallengeName'); // ID do campo de input do HTML
+    if (!input) { showStatus("Erro interno: Campo de nome da prova não encontrado.", true); return; }
+    
+    const rawName = input.value.trim();
+    if (rawName.length < 3) { showStatus("Nome da Prova deve ter pelo menos 3 caracteres.", true); return; }
+    
+    const challengeId = generateId();
+    const challengeName = rawName.charAt(0).toUpperCase() + rawName.slice(1).toLowerCase();
+    
+    const initialData = { id: challengeId, name: challengeName, timestamp: new Date().toISOString(), participants: {} };
+    
+    if (typeof challengesData !== 'object' || challengesData === null) {
+        challengesData = {};
+    }
+    challengesData[challengeId] = initialData;
+    saveDataToStorage(); // <-- Salva na memória local e renderiza listas
+    
+    input.value = '';
+    showStatus(`Prova '${challengeName}' adicionada e salva!`, false);
+};
+
+/** Deleta a prova e todos os seus participantes. */
+async function deleteChallenge(challengeId) {
+    delete challengesData[challengeId];
+    saveDataToStorage();
+    window.showStatus("Prova e todos os participantes excluídos com sucesso!", false);
+}
+
+/* -------------------- CRUD PARTICIPANTES DA PROVA (TELA 2) -------------------- */
+
+/** Adiciona um membro à prova atual. */
+window.addParticipant = function() {
+    if (!currentChallengeId) { showStatus("Abra uma prova para adicionar participantes.", true); return; }
+    if (!memberSelectEl) { showStatus("Erro interno: Seletor de membros não encontrado.", true); return; }
+    
+    const memberId = memberSelectEl.value;
+    if (!memberId) { showStatus("Selecione um membro para adicionar.", true); return; }
+    if (!membersData[memberId]) { showStatus("Erro: Membro selecionado não encontrado.", true); return; }
+
+    const challenge = challengesData[currentChallengeId];
+    if (!challenge.participants) challenge.participants = {};
+    
+    const participants = challenge.participants;
+    const memberName = membersData[memberId].name;
+    const alreadyAdded = Object.values(participants).some(p => p.memberRefId === memberId);
+    
+    if (alreadyAdded) { showStatus("Este membro já está nesta prova.", true); return; }
+    
+    const participantId = generateId();
+    const participantData = {
+        id: participantId, 
+        memberRefId: memberId, 
+        name: memberName,
+        motive: `Motivo para ${memberName} participar... 🏆`,
+        score: "Notas: 0/100 📝", 
+    };
+    
+    challenge.participants[participantId] = participantData;
+    saveDataToStorage();
+    memberSelectEl.value = '';
+    showStatus(`Membro ${memberName} adicionado à prova!`, false);
+};
+
+/** Atualiza o motivo ou nota de um participante. */
+window.updateParticipant = function(participantId, field, value) {
+    if (!currentChallengeId) return;
+    const challenge = challengesData[currentChallengeId];
+    if (challenge && challenge.participants && challenge.participants[participantId]) {
+        challenge.participants[participantId][field] = value;
+        saveDataToStorage();
+        console.log(`Participante ${participantId} campo ${field} atualizado.`);
+    } else {
+        console.error("Erro: Participante não encontrado para atualização.");
+    }
+};
+
+/** Remove um participante de uma prova. */
+window.deleteParticipant = function(participantId) {
+    if (!currentChallengeId) return;
+    const challenge = challengesData[currentChallengeId];
+    if (challenge && challenge.participants && challenge.participants[participantId]) {
+        delete challenge.participants[participantId];
+        saveDataToStorage();
+        showStatus("Participante removido da prova.", false);
+    } else {
+        showStatus("Erro: Participante não encontrado para exclusão.", true);
+    }
+};
+
+/* -------------------- MODAL DE CONFIRMAÇÃO -------------------- */
+let entityToDeleteId = null;
+let entityTypeToDelete = null;
+
+window.showDeleteModal = function(id, type) {
+    entityToDeleteId = id;
+    entityTypeToDelete = type;
+    const modalTextEl = document.getElementById('deleteModalText');
+    if (type === 'member') {
+        const member = membersData[id];
+        modalTextEl.innerText = `Tem certeza que deseja EXCLUIR o membro ${member ? member.name : ''} e todos os seus dados (habilidades, e remover ele de todas as provas)? Esta ação é IRREVERSÍVEL.`;
+    } else if (type === 'challenge') {
+        const challenge = challengesData[id];
+        modalTextEl.innerText = `Tem certeza que deseja EXCLUIR a prova "${challenge ? challenge.name : ''}" e todos os seus participantes? Esta ação é IRREVERSÍVEL.`;
+    }
+    document.getElementById('deleteModal').style.display = 'flex';
+};
+
+window.hideDeleteModal = function() {
+    document.getElementById('deleteModal').style.display = 'none';
+    entityToDeleteId = null;
+    entityTypeToDelete = null;
+};
+
+window.confirmDelete = async function() {
+    if (!entityToDeleteId || !entityTypeToDelete) return;
+    window.hideDeleteModal();
+    if (entityTypeToDelete === 'member') {
+        if (currentMemberId === entityToDeleteId) backToMain();
+        await deleteMember(entityToDeleteId);
+    } else if (entityTypeToDelete === 'challenge') {
+        if (currentChallengeId === entityToDeleteId) backToMain();
+        await deleteChallenge(entityToDeleteId);
+    }
+};
+
+/* -------------------- RENDERIZAÇÃO E NAVEGAÇÃO -------------------- */
+
+/** Preenche o dropdown de seleção de membros na Tela 2. */
+function populateMemberSelect() {
+    if (!memberSelectEl) return;
+    memberSelectEl.innerHTML = '<option value="" disabled selected>Selecione um integrante...</option>';
+    const memberArray = Object.values(membersData || {});
+    memberArray.sort((a,b) => a.name.localeCompare(b.name, 'pt', { sensitivity:'base' }));
+    memberArray.forEach(member => {
+        const option = document.createElement('option');
+        option.value = member.id;
+        option.textContent = member.name;
+        memberSelectEl.appendChild(option);
+    });
+}
+
+/** Renderiza a lista de membros na Tela 1. */
+function renderMemberList() {
+    if (!memberListEl) return;
+    memberListEl.innerHTML = '';
+    const memberArray = Object.values(membersData || {}); 
+    if (memberArray.length === 0) {
+        memberListEl.innerHTML = '<p style="text-align:center; color:#6A737D; padding:20px;">Nenhum membro cadastrado. Adicione um acima!</p>';
+        return;
+    }
+    memberArray.sort((a,b) => a.name.localeCompare(b.name, 'pt', { sensitivity:'base' }));
+    memberArray.forEach(member => {
+        const initial = member.name.charAt(0).toUpperCase();
+        const itemHtml = `
+            <div class="item-list">
+                <!-- Informações do membro, que abrem a tela de detalhes -->
+                <div class="item-info" onclick="openMemberDetails('${member.id}')">
+                    <div class="circle">${initial}</div>
+                    <span>${member.name}</span>
+                </div>
+                <!-- Container para os botões de Ação (Copiar e Deletar) -->
+                <div class="item-actions">
+                    <!-- Botão de Copiar Detalhes Individuais (CORRIGIDO) -->
+                    <button class="small-copy-btn" onclick="copyMemberDetailsToClipboard('${member.id}')" title="Copiar Habilidades e Resumo">📋</button>
+                    <button class="delete-button" onclick="showDeleteModal('${member.id}', 'member')" style="margin-left: 10px;">✕</button>
+                </div>
             </div>
+        `;
+        memberListEl.innerHTML += itemHtml;
+    });
+}
 
-            <!-- Card 2: Incêndios -->
-            <div class="card">
-                <h3>Incêndios</h3>
-                <p>Fios elétricos comprometidos podem gerar faíscas, o que aumenta o risco de incêndios. Verifique regularmente as condições dos cabos dos aparelhos em sua casa.</p>
+/** Renderiza a lista de Provas na Tela 1. */
+function renderChallengeList() {
+    if (!challengeListEl) return;
+    challengeListEl.innerHTML = '';
+    const challengeArray = Object.values(challengesData || {}); 
+    if (challengeArray.length === 0) {
+        challengeListEl.innerHTML = '<p style="text-align:center; color:#6A737D; padding:20px;">Nenhuma prova cadastrada. Adicione uma acima!</p>';
+        return;
+    }
+    challengeArray.sort((a,b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+    challengeArray.forEach(challenge => {
+        const initial = challenge.name.charAt(0).toUpperCase();
+        const itemHtml = `
+            <div class="item-list">
+                <div class="item-info" onclick="openChallengeDetails('${challenge.id}')">
+                    <div class="circle challenge-circle">${initial}</div>
+                    <span>${challenge.name}</span>
+                </div>
+                <button class="delete-button" onclick="showDeleteModal('${challenge.id}', 'challenge')">✕</button>
             </div>
+        `;
+        challengeListEl.innerHTML += itemHtml;
+    });
+}
 
-            <!-- Card 3: Soluções -->
-            <div class="card">
-                <h3>Soluções</h3>
-                <p>Se encontrar um fio descascado, a solução ideal é substituir o cabo. Nunca tente remendar fios com fita isolante, pois isso oferece apenas uma proteção temporária e incompleta.</p>
+/** Renderiza a lista de participantes na Tela 2. */
+function renderParticipants(participants) {
+    const participantListEl = document.getElementById('participantList');
+    const participantCountEl = document.getElementById('participantCount');
+    if (!participantListEl || !participantCountEl) return;
+    
+    // --- CORREÇÃO DO BUG DO CONTADOR: Atualiza o contador ANTES de renderizar ---
+    const count = participants ? participants.length : 0;
+    participantCountEl.textContent = `${count} Participante${count !== 1 ? 's' : ''}`;
+    // --- FIM DA CORREÇÃO ---
+    
+    participantListEl.innerHTML = '';
+    
+    if (count === 0) {
+        participantListEl.innerHTML = '<p style="text-align:center; color:#6A737D; padding:20px;">Adicione o primeiro participante acima.</p>';
+        return;
+    }
+
+    participants.sort((a,b) => a.name.localeCompare(b.name, 'pt', { sensitivity: 'base' }));
+    participants.forEach(p => {
+        const initial = p.name.charAt(0).toUpperCase();
+        const participantHtml = `
+            <div class="participant-item">
+                <div class="participant-header">
+                    <div class="item-info">
+                        <div class="circle">${initial}</div>
+                        <span class="participant-name">${p.name}</span>
+                    </div>
+                    <button class="delete-button" onclick="deleteParticipant('${p.id}')">✕</button>
+                </div>
+                <div class="participant-details-group">
+                    <label for="motive-${p.id}">Motivo / Função na Prova:</label>
+                    <textarea id="motive-${p.id}" rows="2" onblur="updateParticipant('${p.id}','motive', this.value)" placeholder="Motivo (ex: Corredor de resistência)">${p.motive}</textarea>
+                    <label for="score-${p.id}">Notas / Pontuação:</label>
+                    <textarea id="score-${p.id}" rows="2" onblur="updateParticipant('${p.id}','score', this.value)" placeholder="Notas (ex: 9/10 em velocidade, 3s de tempo)">${p.score}</textarea>
+                </div>
             </div>
-        </div>
+        `;
+        participantListEl.innerHTML += participantHtml;
+    });
+}
 
-        <!-- Link to external site -->
-        <div class="link-container">
-            <a href="https://www.exemplo.com/riscos-de-eletrodomesticos-com-fios-descascados" target="_blank">Saiba Mais</a>
-        </div>
-    </div>
+/** Navega para a Tela 3 (Detalhes do Membro). */
+window.openMemberDetails = function(memberId) {
+    document.getElementById('tela1').classList.remove('active');
+    document.getElementById('tela2').classList.remove('active');
+    currentMemberId = memberId;
+    currentChallengeId = null;
+    currentScreen = 'member';
+    const member = membersData[memberId];
+    if (!member) return;
+    document.getElementById('currentMemberName').textContent = member.name;
+    renderMemberDetails();
+    document.getElementById('tela3').classList.add('active');
+};
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 EletroSegurança. Todos os direitos reservados.</p>
-    </footer>
+/** Navega para a Tela 2 (Detalhes da Prova). */
+window.openChallengeDetails = function(challengeId) {
+    document.getElementById('tela1').classList.remove('active');
+    document.getElementById('tela3').classList.remove('active');
+    currentChallengeId = challengeId;
+    currentMemberId = null;
+    currentScreen = 'challenge';
+    const challenge = challengesData[challengeId];
+    if (!challenge) return;
+    document.getElementById('currentChallengeName').textContent = challenge.name;
+    document.getElementById('challengeCircle').textContent = challenge.name.charAt(0).toUpperCase();
+    const participantsArray = Object.values(challenge.participants || {});
+    renderParticipants(participantsArray);
+    document.getElementById('tela2').classList.add('active');
+};
 
+/** Volta para a Tela 1 (Main). */
+window.backToMain = function() {
+    currentMemberId = null;
+    currentChallengeId = null;
+    currentScreen = 'main';
+    const summaryEditAreaEl = document.getElementById('summaryEditArea');
+    if (summaryEditAreaEl && document.getElementById('tela3').classList.contains('active')) {
+        toggleSummaryInput(false);
+    }
+    document.getElementById('tela2').classList.remove('active');
+    document.getElementById('tela3').classList.remove('active');
+    document.getElementById('tela1').classList.add('active');
+    renderAllLists();
+};
+
+/* -------------------- FUNÇÕES TELA 3 (DETALHES DO MEMBRO) -------------------- */
+window.renderMemberDetails = function() {
+    if (!currentMemberId || !membersData[currentMemberId]) return;
+    const data = membersData[currentMemberId];
+    const skillsContainerEl = document.getElementById('skillsContainer');
+    if (!skillsContainerEl) return;
+    skillsContainerEl.innerHTML = '<h3>Habilidades Táticas</h3>';
+    allSkills.forEach(skill => {
+        const level = data[skill] !== undefined ? data[skill] : initialSkillLevel;
+        const progressBarWidth = ((level / maxSkillLevel) * 100).toFixed(0);
+        const skillLineHtml = `
+            <div class="skill-line">
+                <div class="skill-header">
+                    <span class="skill-label">${skill}</span>
+                    <div class="skill-controls">
+                        <button class="button-base" onclick="updateSkill('${skill}', -1)" ${level <= minSkillLevel ? 'disabled' : ''}>-</button>
+                        <span style="font-weight:700; color:white; margin:0 5px; flex-shrink:0;">${level}</span>
+                        <button class="button-base" onclick="updateSkill('${skill}', 1)" ${level >= maxSkillLevel ? 'disabled' : ''}>+</button>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: ${progressBarWidth}%;"></div>
+                </div>
+            </div>
+        `;
+        skillsContainerEl.innerHTML += skillLineHtml;
+    });
+    
+    // Resumo
+    const summary = data.summary || "";
+    const summaryDisplayEl = document.getElementById('summaryDisplay');
+    const summaryTextareaEl = document.getElementById('summaryTextarea');
+    if (summaryDisplayEl) {
+        if (summary) {
+            summaryDisplayEl.textContent = summary;
+            summaryDisplayEl.classList.remove('placeholder-text');
+        } else {
+            summaryDisplayEl.textContent = "Nenhum resumo cadastrado. Clique em '+' para adicionar.";
+            summaryDisplayEl.classList.add('placeholder-text');
+        }
+    }
+    if (summaryTextareaEl) summaryTextareaEl.value = summary;
+};
+
+window.updateSkill = function(skillName, change) {
+    if (!currentMemberId) return;
+    const data = membersData[currentMemberId];
+    let currentLevel = data[skillName] !== undefined ? data[skillName] : initialSkillLevel;
+    let newLevel = currentLevel + change;
+    newLevel = Math.max(minSkillLevel, Math.min(maxSkillLevel, newLevel));
+    if (newLevel !== currentLevel) {
+        data[skillName] = newLevel;
+        saveDataToStorage();
+        showStatus("Habilidade atualizada!", false);
+    }
+};
+
+window.saveSummary = function() {
+    if (!currentMemberId) return;
+    const newSummary = document.getElementById('summaryTextarea').value.trim();
+    membersData[currentMemberId].summary = newSummary;
+    saveDataToStorage();
+    renderMemberDetails();
+    toggleSummaryInput(false);
+    showStatus("Resumo salvo com sucesso!", false);
+};
+
+window.toggleSummaryInput = function(enable) {
+    const summaryEditAreaEl = document.getElementById('summaryEditArea');
+    const summaryToggleButtonEl = document.getElementById('summaryToggleButton');
+    const summaryDisplayEl = document.getElementById('summaryDisplay');
+    if (!summaryEditAreaEl || !summaryToggleButtonEl || !summaryDisplayEl) return;
+    const isEditing = enable !== undefined ? enable : summaryEditAreaEl.style.display === 'none';
+    if (isEditing) {
+        const memberData = membersData[currentMemberId];
+        document.getElementById('summaryTextarea').value = (memberData && memberData.summary) ? memberData.summary : "";
+        
+        summaryEditAreaEl.style.display = 'block';
+        summaryToggleButtonEl.textContent = 'x';
+        summaryDisplayEl.style.display = 'none';
+    } else {
+        summaryEditAreaEl.style.display = 'none';
+        summaryToggleButtonEl.textContent = '+';
+        summaryDisplayEl.style.display = 'block';
+    }
+};
+
+/* -------------------- FUNÇÕES DE CÓPIA -------------------- */
+
+/** Gera um texto formatado com Nome, Habilidades e Resumo do membro e copia para clipboard */
+window.copyMemberDetailsToClipboard = async function(memberId) {
+    const member = membersData[memberId];
+    if (!member) {
+        showStatus("Membro não encontrado para cópia.", true);
+        return;
+    }
+
+    const lines = [];
+    lines.push(`*** ANÁLISE ESTRATÉGICA - ${member.name.toUpperCase()} ***`);
+    lines.push('');
+    lines.push('--- HABILIDADES TÁTICAS (Nível 1-9) ---');
+    
+    allSkills.forEach(skill => {
+        const level = member[skill] !== undefined ? member[skill] : initialSkillLevel;
+        lines.push(`✅ ${skill}: ${level}`);
+    });
+
+    lines.push('');
+    lines.push('--- RESUMO DE ANÁLISE ---');
+    lines.push(member.summary ? member.summary : '[Nenhum resumo cadastrado.]');
+    lines.push(''); 
+    lines.push('*** FIM DA ANÁLISE ***');
+
+    const resultText = lines.join('\n');
+    
+    // Lógica de CÓPIA ROBUSTA
+    const ta = document.createElement('textarea');
+    ta.value = resultText;
+    ta.style.position = 'fixed'; 
+    ta.style.left = '-9999px'; 
+    document.body.appendChild(ta);
+    
+    let success = false;
+    try {
+        ta.select();
+        success = document.execCommand('copy');
+    } catch (e) {
+        console.error("Erro ao tentar copiar com execCommand:", e);
+    }
+    
+    document.body.removeChild(ta);
+    
+    if (success) {
+        showStatus(`Detalhes de ${member.name} copiados com sucesso!`, false);
+    } else {
+        showStatus("Erro ao copiar. O navegador pode ter bloqueado o acesso à área de transferência.", true);
+    }
+}
+
+/** Gera um texto com todos os integrantes + habilidades + resumo, copia para clipboard */
+async function copyAllMembersToClipboard() {
+    const memberArray = Object.values(membersData || {});
+    if (memberArray.length === 0) {
+        showStatus("Nenhum membro para copiar.", true);
+        return;
+    }
+    memberArray.sort((a,b) => a.name.localeCompare(b.name, 'pt', { sensitivity: 'base' }));
+    const lines = [];
+    lines.push('*** RELATÓRIO COMPLETO DOS INTEGRANTES ***\n');
+
+    memberArray.forEach(m => {
+        lines.push(`===================================`);
+        lines.push(`NOME: ${m.name.toUpperCase()}`);
+        lines.push(`-----------------------------------`);
+        lines.push('HABILIDADES TÁTICAS (1-9):');
+        allSkills.forEach(skill => {
+            const level = m[skill] !== undefined ? m[skill] : initialSkillLevel;
+            lines.push(` - ${skill}: ${level}`);
+        });
+        lines.push('\nRESUMO DE ANÁLISE:');
+        lines.push(m.summary ? m.summary : '[Nenhum resumo cadastrado.]');
+        lines.push('===================================\n');
+    });
+    
+    const resultText = lines.join('\n');
+    
+    // Lógica de CÓPIA ROBUSTA
+    const ta = document.createElement('textarea');
+    ta.value = resultText;
+    ta.style.position = 'fixed'; 
+    ta.style.left = '-9999px'; 
+    document.body.appendChild(ta);
+    
+    let success = false;
+    try {
+        ta.select();
+        success = document.execCommand('copy');
+    } catch (e) {
+        console.error("Erro ao tentar copiar com execCommand:", e);
+    }
+    
+    document.body.removeChild(ta);
+    
+    if (success) {
+        showStatus("Relatório completo copiado para a área de transferência.", false);
+    } else {
+        showStatus("Erro ao copiar. O navegador pode ter bloqueado o acesso à área de transferência.", true);
+    }
+}
+
+/* -------------------- INIT: Inicialização imediata -------------------- */
+document.addEventListener("DOMContentLoaded", function () {
+    try {
+        initApp();
+
+        // 1. Conecta botão copiar todos
+        if (copyAllBtn) copyAllBtn.addEventListener('click', copyAllMembersToClipboard);
+
+        // 2. Conecta os botões de Adição (Membros, Provas, Participantes) via EventListener
+        if (addMemberButton) {
+            addMemberButton.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                addMember();
+            });
+        }
+        if (addChallengeButton) {
+            addChallengeButton.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                addChallenge();
+            });
+        }
+        if (addParticipantButton) {
+            addParticipantButton.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                addParticipant();
+            });
+        }
+
+        console.log("initApp concluído e Event Listeners conectados.");
+    } catch (e) {
+        console.error("ERRO grave na inicialização do App (initApp/EventListeners):", e);
+        window.showStatus("ERRO grave ao inicializar o aplicativo. Verifique o console.", true);
+    }
+});
+</script>
 </body>
 </html>
+
